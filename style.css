@@ -1,0 +1,54 @@
+* {
+  font-family: verdana;
+}
+
+.game-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ticTacToeBoard {
+  display: grid;
+  vertical-align: middle;
+  grid-template-columns: repeat(3, 225px);
+  grid-template-rows: repeat(3, 225px);
+  gap: 20px;
+  background-color: hsl(270, 50%, 40%);
+  padding: 10px;
+  justify-content: center;
+  align-content: center;
+  border-radius: 45px;
+  width: 50%;
+}
+
+.ticTacToeBoard div {
+  background-color: white;
+  color: hsl(270, 50%, 40%);
+  text-shadow: 5px 5px 5px black;
+  border-radius: 15px;
+  font-size: 12em;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.ticTacToeBoard div:hover {
+  background-color: rgba(235, 235, 235, 0.8);
+}
+
+#resetButton {
+  display: none;
+}
+
+h1 {
+  display: flex;
+  font-size: 3.0em;
+  text-align: center;
+  font-family: verdana;
+  text-transform: uppercase;
+  color: hsl(270, 50%, 40%);
+  text-shadow: 5px 5px 5px black;
+  text-shadow: 15px 15px 5px grey;
+  justify-content: center;
+}
