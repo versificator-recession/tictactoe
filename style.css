@@ -1,4 +1,5 @@
-* {
+:root {
+  --custom-shadow: 5px 5px 5px black, -4px 10px 5px hsla(270, 50%, 40%, 0.55), 7px 11px 6px lightgrey;
   font-family: verdana;
 }
 
@@ -11,23 +12,24 @@
 .ticTacToeBoard {
   display: grid;
   vertical-align: middle;
-  grid-template-columns: repeat(3, 225px);
-  grid-template-rows: repeat(3, 225px);
-  gap: 20px;
+  grid-template-columns: repeat(3, 200px);
+  grid-template-rows: repeat(3, 200px);
+  gap: 15px;
   background-color: hsl(270, 50%, 40%);
-  padding: 10px;
+  padding: 15px 0px 15px 0px;
   justify-content: center;
   align-content: center;
-  border-radius: 45px;
-  width: 50%;
+  border-radius: 22.5px;
+  width: 40%;
+  box-shadow: 2px 2px 50px 4px rgba(0,0,0,0.45);
 }
 
 .ticTacToeBoard div {
   background-color: white;
   color: hsl(270, 50%, 40%);
-  text-shadow: 5px 5px 5px black;
+  text-shadow: var(--custom-shadow);
   border-radius: 15px;
-  font-size: 12em;
+  font-size: 10em;
   text-align: center;
   display: table-cell;
   vertical-align: middle;
@@ -38,17 +40,33 @@
 }
 
 #resetButton {
-  display: none;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 35px;
+
+  background-color: #a680b8;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#resetButton:hover {
+  background-color: #9570a0;
 }
 
 h1 {
   display: flex;
-  font-size: 3.0em;
+  font-size: 3.5em;
   text-align: center;
   font-family: verdana;
   text-transform: uppercase;
   color: hsl(270, 50%, 40%);
-  text-shadow: 5px 5px 5px black;
-  text-shadow: 15px 15px 5px grey;
+  text-shadow: var(--custom-shadow);
   justify-content: center;
 }

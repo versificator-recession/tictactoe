@@ -27,7 +27,9 @@ function checkWin () {
 }
 
 function gridAnimations () {
-	
+	document.querySelectorAll(".ticTacToeBoard div").forEach(function(div) {
+	    div.style.textShadow = "5px 5px 5px black";
+	});
 	document.querySelector(".box1").style.backgroundColor = "lightblue";
 	document.querySelector(".box2").style.backgroundColor = "yellow";
 	document.querySelector(".box3").style.backgroundColor = "lightgreen";
@@ -38,13 +40,18 @@ function gridAnimations () {
 
 function postGame (winner) {
 	gameActive = false;
-	document.querySelectorAll(".upper-left-box").forEach(function(div) {
+	document.querySelectorAll(".box1").forEach(function(div) {
 		div.style.backgroundColor = 'rgba(255, 0, 0, 0.5)';
 	});
 
 	gridAnimations ();
 
 }
+
+document.getElementById('resetButton').addEventListener('click', function() {
+    location.reload();
+});
+
 
 document.addEventListener('DOMContentLoaded', function () {
     const squares = document.querySelectorAll('.ticTacToeBoard div');
