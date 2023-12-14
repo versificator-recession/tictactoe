@@ -20,7 +20,8 @@
   justify-content: center;
   align-content: center;
   border-radius: 22.5px;
-  width: 40%;
+  width: 700px;
+  height: 680px;  
   box-shadow: 2px 2px 50px 4px rgba(0,0,0,0.45);
 }
 
@@ -33,10 +34,44 @@
   text-align: center;
   display: table-cell;
   vertical-align: middle;
+  transition: background-color 750ms;
 }
 
 .ticTacToeBoard div:hover {
   background-color: rgba(235, 235, 235, 0.8);
+  cursor: pointer;
+}
+
+.leftSide {
+  position: absolute;
+  left: 150px;
+  top: 220px;
+  height: 200px;
+  width: 255px;
+  border-radius: 12px;
+  background-color: hsla(270, 50%, 40%, 0.30);
+  padding: 25px 35px 0px 35px;
+
+  display: flex;
+  text-align: center;
+  font-size: 2em;
+  text-shadow: var(--custom-shadow);
+  color: hsl(270, 50%, 40%);
+  font-weight: bolder;
+}
+
+#span1 {
+  transform: rotate(-5deg);
+}
+
+#currentPlayer {
+  position: absolute;
+  left: 115px;
+  top: 100px;
+  color: hsl(270, 50%, 40%);
+  text-shadow: var(--custom-shadow);
+  font-size: 5.0em;
+  transform: rotate(10deg);
 }
 
 #resetButton {
@@ -53,11 +88,11 @@
   font-size: 16px;
   text-transform: uppercase;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.85s;
 }
 
 #resetButton:hover {
-  background-color: #9570a0;
+  background-color: hsla(270, 50%, 40%, 0.85);
 }
 
 h1 {
@@ -69,4 +104,14 @@ h1 {
   color: hsl(270, 50%, 40%);
   text-shadow: var(--custom-shadow);
   justify-content: center;
+}
+
+@keyframes quickSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(720deg); }
+}
+
+@keyframes slowSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
