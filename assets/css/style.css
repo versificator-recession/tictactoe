@@ -1,5 +1,5 @@
 :root {
-  --custom-shadow: 5px 5px 5px black, -4px 10px 5px hsla(270, 50%, 40%, 0.55), 7px 11px 6px lightgrey;
+  --custom-shadow: 5px 5px 5px black, -4px 10px 5px hsla(270, 50%, 40%, 0.55), 7px 11px 6px lightgray;
   font-family: verdana;
 }
 
@@ -51,6 +51,10 @@
   border-radius: 12px;
   background-color: hsla(270, 50%, 40%, 0.30);
   padding: 25px 35px 0px 35px;
+  box-shadow: 2px 2px 50px 4px rgba(0,0,0,0.45);
+  border-style: solid;
+  border-width: 1px;
+  border-color: hsla(270, 50%, 40%, 0.30);
 
   display: flex;
   text-align: center;
@@ -60,18 +64,29 @@
   font-weight: bolder;
 }
 
-#span1 {
+#displayMessage {
+  --starting-rotate: rotate(-5deg);
+  --ending-rotate: rotate(5deg);
   transform: rotate(-5deg);
 }
 
-#currentPlayer {
+#currentPlayerDisplay {
+  --starting-fontsize: 5.0em;
+  --starting-left: 115px;
+  --starting-top: 100px;
+  --starting-rotate: rotate(10deg);
+  --ending-fontsize: 7.2em;
+  --ending-left: 60px;
+  --ending-top: 75px;
+  --ending-rotate: rotate(-4deg);
+
   position: absolute;
-  left: 115px;
-  top: 100px;
   color: hsl(270, 50%, 40%);
+  left: var(--starting-left);
+  top: var(--starting-top);
   text-shadow: var(--custom-shadow);
-  font-size: 5.0em;
-  transform: rotate(10deg);
+  font-size: var(--starting-fontsize);
+  transform: var(--starting-rotate);
 }
 
 #resetButton {
@@ -106,12 +121,37 @@ h1 {
   justify-content: center;
 }
 
-@keyframes quickSpin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(720deg); }
-}
-
-@keyframes slowSpin {
+@keyframes spin-it {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+@keyframes smooth-transition {
+  from {
+    font-size: var(--starting-fontsize, inherit);
+    left: var(--starting-left);
+    top: var(--starting-top);
+    transform: var(--starting-rotate, 0deg);
+  }
+  
+  to {
+    font-size: var(--ending-fontsize, inherit);
+    left: var(--ending-left);
+    top: var(--ending-top);
+    transform: var(--ending-rotate, 0deg);
+  }
+}
+
+@keyframes refocus {
+  from {
+    filter: blur()
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+

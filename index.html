@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TIC-TAC-TOE</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="assets/js/script.js" defer></script>
 </head>
 <body>
-    <h1>TIC-TAC-TOE</h1>
+    <h1 id="main-header">TIC-TAC-TOE</h1>
     <div id="gameStatus" class="leftSide">
-        <span id="span1">CURRENT PLAYER</span>
-        <span id="currentPlayer">X</span>
+        <span id="displayMessage">CURRENT PLAYER</span>
+        <span id="currentPlayerDisplay">X</span>
         <div></div>
         <div></div>
     </div>
@@ -28,10 +28,7 @@
             <div class="box9"></div>
           </div>
   	</div>
-
     <p id="gameStatus"></p>
     <button id="resetButton">Reset Game</button>
-
-    <script src="script.js"></script>
 </body>
 </html>
