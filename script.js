@@ -10,11 +10,6 @@ let currentPlayerDisplay = document.getElementById("currentPlayerDisplay");
 let displayMessage = document.getElementById("displayMessage");
 currentPlayerDisplay.innerHTML = plays[currentPlayer];
 
-const animateElement = document.querySelector("#main-header");
-animateElement.classList.add("animate__animated", "animate__animate__fadeInLeftBig");
-animateElement.style.setProperty("--animate-duration", "2500ms");
-
-
 function checkWin () {
 	const winConditions = [
 	   [0, 1, 2], [3, 4, 5], [6, 7, 8],
